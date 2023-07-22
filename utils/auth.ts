@@ -1,7 +1,7 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 import NextAuth, { NextAuthOptions } from "next-auth";
-import GithubProvider from "next-auth/providers/github";
+import DiscordProvider from "next-auth/providers/discord";
 
 const prisma = new PrismaClient();
 
@@ -12,7 +12,7 @@ const adapter = PrismaAdapter(prisma);
 export const authOptions: NextAuthOptions = {
   adapter,
   providers: [
-    GithubProvider({
+    DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID ?? "",
       clientSecret: process.env.DISCORD_CLIENT_SECRET ?? "",
     }),
