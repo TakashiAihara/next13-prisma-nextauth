@@ -16,7 +16,9 @@ export function AuthShowcase() {
         signIn();
       }}
     >
-      <span className="capsize">Sign in with Discord</span>
+      <div>
+        <span className="capsize">Sign in with Discord</span>
+      </div>
     </a>
   ) : (
     // eslint-disable-next-line @next/next/no-html-link-for-pages
@@ -30,7 +32,9 @@ export function AuthShowcase() {
         signOut();
       }}
     >
-      <span className="capsize">Logout</span>
+      <div>
+        <span className="capsize">Logged In!! Logout</span>
+      </div>
     </a>
   );
 }
