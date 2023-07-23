@@ -2,8 +2,11 @@
 
 import { signIn, signOut, useSession } from "next-auth/react";
 
-export function AuthShowcase() {
+import { trpc } from "./client";
+
+export function Page() {
   const { data: session } = useSession();
+  const postQuery = trpc.users.useQuery();
 
   return !session ? (
     <a
@@ -39,4 +42,4 @@ export function AuthShowcase() {
   );
 }
 
-export default AuthShowcase;
+export default trpc.withTRPC(Page);

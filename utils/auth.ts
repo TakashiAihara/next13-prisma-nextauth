@@ -5,7 +5,7 @@ import DiscordProvider from "next-auth/providers/discord";
 
 const prisma = new PrismaClient();
 
-export const providers = ["github"] as const;
+export const providers = ["discord"] as const;
 export type OAuthProviders = (typeof providers)[number];
 const adapter = PrismaAdapter(prisma);
 
